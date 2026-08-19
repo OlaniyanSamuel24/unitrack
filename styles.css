@@ -1,0 +1,93 @@
+:root {
+  --ink: #1e1b2e;
+  --muted: #686477;
+  --purple: #30245d;
+  --purple-2: #4b3b85;
+  --lilac: #f4f1fb;
+  --line: #e8e5ef;
+  --gold: #d9aa53;
+  --gold-soft: #fbf3e3;
+  --green: #238467;
+  --green-soft: #e7f5ef;
+  --amber: #b46d18;
+  --amber-soft: #fff4df;
+  --red: #c55252;
+  --white: #fff;
+  --shadow: 0 16px 44px rgba(48, 36, 93, .09);
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: #fbfaff; font-family: 'DM Sans', sans-serif; }
+button, input, select { font: inherit; }
+button { border: 0; cursor: pointer; }
+.network-status { position: fixed; top: 12px; left: 50%; z-index: 30; width: min(92vw, 520px); transform: translateX(-50%); padding: 11px 14px; border: 1px solid #e6b45d; border-radius: 12px; background: #fff8e9; color: #75470d; box-shadow: 0 8px 24px rgba(48,36,93,.14); font-size: 12px; line-height: 1.4; }
+.network-status[hidden] { display: none; }
+.empty-state { display: grid; gap: 6px; padding: 10px 0; color: var(--muted); font-size: 12px; line-height: 1.45; }.empty-state strong { color: var(--ink); font-size: 13px; }
+.app-shell { min-height: 100vh; display: flex; }
+.sidebar { display: none; }
+main { width: 100%; padding: 24px 20px 96px; max-width: 1180px; margin: 0 auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.brand { display: flex; gap: 10px; align-items: center; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 18px; color: var(--purple); }
+.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px 11px 11px 3px; background: #fff url('https://ui.edu.ng/sites/default/files/WhatsApp%20Image%202023-08-11%20at%201.55.09%20PM.jpeg') center / 110% auto no-repeat; color: transparent; font-size: 0; font-weight: 800; overflow: hidden; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; background: #d8c9bc; color: #604d43; display: grid; place-items: center; font-weight: 700; }
+.eyebrow { color: var(--purple-2); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+h1 { font-size: clamp(25px, 7vw, 39px); line-height: 1.12; letter-spacing: -.03em; }
+h2 { font-size: 22px; letter-spacing: -.02em; }
+h3 { font-size: 15px; }
+.consent-row { display: flex; align-items: flex-start; gap: 8px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.consent-row input { margin-top: 2px; accent-color: var(--purple); }
+.consent-row a { color: var(--purple-2); font-weight: 700; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.header-copy { display: grid; gap: 8px; }
+.dashboard-intro { position: relative; padding: 8px 0 4px 16px; border-left: 3px solid var(--gold); }
+.dashboard-kicker { display: flex; justify-content: space-between; gap: 12px; color: var(--gold); font-size: 10px; letter-spacing: .12em; }
+.dashboard-kicker span:last-child { color: var(--muted); text-align: right; }
+.dashboard-label { color: var(--purple-2); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.header-copy p { color: var(--muted); font-size: 14px; }
+.grid { display: grid; gap: 16px; }
+.stats-grid { grid-template-columns: repeat(2, 1fr); margin: 24px 0; }
+.card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: 0 5px 20px rgba(48,36,93,.035); }
+.stat-card { min-height: 120px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.stat-card:after { content: ''; position: absolute; width: 54px; height: 54px; right: -22px; bottom: -22px; border: 1px solid #e8e0f3; border-radius: 50%; }
+.stat-card:nth-child(2) { border-top: 3px solid var(--gold); }.stat-card:nth-child(3) { border-top: 3px solid var(--green); }.stat-card:nth-child(4) { border-top: 3px solid var(--purple-2); }
+.stat-icon { color: var(--purple-2); background: var(--lilac); width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 15px; }
+.stat-value { font-family: 'Plus Jakarta Sans'; font-size: 25px; font-weight: 800; }
+.stat-label { color: var(--muted); font-size: 12px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; margin: 28px 0 13px; }
+.text-button { color: var(--purple-2); font-size: 12px; font-weight: 700; background: transparent; }
+.progress-card { display: grid; gap: 18px; background: linear-gradient(90deg, rgba(48,36,93,.96), rgba(48,36,93,.78)), url('https://ui.edu.ng/sites/default/files/media/2023-04/university-of-ibadan-entrance.jpg') center 48% / cover; color: var(--white); border: 0; overflow: hidden; position: relative; }
+.progress-card:after { content: ''; width: 150px; height: 150px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; position: absolute; right: -48px; top: -48px; }
+.progress-meta { display: flex; justify-content: space-between; align-items: end; position: relative; z-index: 1; }
+.progress-meta strong { font-family: 'Plus Jakarta Sans'; font-size: 32px; }
+.progress-track { height: 9px; border-radius: 99px; background: rgba(255,255,255,.2); overflow: hidden; }
+.progress-track > span { display: block; height: 100%; background: var(--gold); border-radius: inherit; }
+.course-list, .deadline-list, .result-list { display: grid; gap: 10px; }
+.course-row, .deadline-row, .result-row { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.course-row[data-screen] { cursor: pointer; transition: transform .18s ease, padding-left .18s ease; }.course-row[data-screen]:hover { transform: translateX(4px); padding-left: 4px; }
+.course-row:last-child, .deadline-row:last-child, .result-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.course-code { min-width: 58px; color: var(--purple-2); font-size: 11px; font-weight: 800; }
+.course-info { flex: 1; min-width: 0; }
+.course-info strong { display: block; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.course-info span { font-size: 12px; color: var(--muted); }
+.badge { display: inline-flex; padding: 5px 9px; border-radius: 99px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.badge.green { background: var(--green-soft); color: var(--green); }.badge.amber { background: var(--amber-soft); color: var(--amber); }.badge.purple { background: var(--lilac); color: var(--purple-2); }
+.deadline-date { width: 40px; text-align: center; background: var(--gold-soft); color: var(--amber); border-radius: 10px; padding: 6px 2px; font-size: 10px; font-weight: 800; }
+.deadline-date strong { display: block; font-size: 16px; line-height: 1; }
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); border-top: 1px solid var(--line); z-index: 10; backdrop-filter: blur(15px); }
+.nav-item { display: grid; gap: 4px; justify-items: center; color: var(--muted); background: transparent; font-size: 10px; padding: 5px; }.nav-item.active { color: var(--purple); font-weight: 700; }.nav-icon { font-size: 18px; line-height: 1; }
+.tabs { display: flex; gap: 6px; background: var(--lilac); border-radius: 12px; padding: 4px; margin: 22px 0 16px; }.tab { flex: 1; padding: 10px 5px; border-radius: 9px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 700; }.tab.active { background: var(--white); color: var(--purple); box-shadow: 0 2px 8px rgba(48,36,93,.08); }
+.chart { height: 160px; display: flex; align-items: end; gap: 12px; padding: 20px 8px 0; }.bar { flex: 1; display: grid; align-content: end; justify-items: center; gap: 6px; height: 100%; color: var(--muted); font-size: 10px; }.bar i { display: block; width: 100%; max-width: 34px; background: var(--purple-2); border-radius: 6px 6px 2px 2px; min-height: 18px; }.bar:nth-child(2) i { background: #8c7bb9; }.bar:nth-child(3) i { background: var(--gold); }.bar:nth-child(4) i { background: var(--purple); }
+.circle { width: 136px; height: 136px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--gold) 0 76%, #e9e4f1 76% 100%); position: relative; }.circle:after { content: ''; position: absolute; inset: 10px; border-radius: 50%; background: white; }.circle-content { position: relative; z-index: 1; text-align: center; }.circle-content strong { display:block; font-family:'Plus Jakarta Sans'; font-size: 28px; }.circle-content span { font-size: 11px; color: var(--muted); }
+.btn { min-height: 52px; border-radius: 13px; padding: 0 18px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }.btn-primary { color: white; background: var(--purple); }.btn-secondary { color: var(--purple); background: var(--lilac); }.btn-wide { width: 100%; }
+.provider-icon { width: 20px; height: 20px; display: inline-grid; place-items: center; flex: 0 0 20px; font-family: Arial, sans-serif; font-weight: 800; line-height: 1; }.provider-google { color: #4285f4; font-size: 18px; }.provider-apple { color: #111; font-family: Arial, sans-serif; font-size: 22px; }
+.btn:disabled { cursor: wait; opacity: .7; }.btn[aria-busy="true"]:after { content: ''; width: 13px; height: 13px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin .7s linear infinite; }@keyframes spin { to { transform: rotate(360deg); } }
+.form { display: grid; gap: 16px; margin-top: 24px; }.field { display: grid; gap: 8px; }.field label { font-size: 12px; font-weight: 700; }.field input, .field select { width: 100%; height: 52px; border: 1px solid var(--line); border-radius: 12px; padding: 0 14px; color: var(--ink); background: white; outline: none; }.field input:focus, .field select:focus { border-color: var(--purple-2); box-shadow: 0 0 0 3px #eeeafb; }.form-message { color: var(--red); min-height: 16px; }
+.pill-select { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }.pill-select button { padding: 13px 4px; border: 1px solid var(--line); background: white; border-radius: 11px; color: var(--muted); font-size: 11px; font-weight: 700; }.pill-select button.selected { border-color: var(--purple); background: var(--lilac); color: var(--purple); }
+.auth-shell, .onboard-shell { min-height: 100vh; padding: 28px 24px; display: flex; flex-direction: column; max-width: 500px; margin: auto; }.auth-top { display:flex; justify-content:space-between; align-items:center; }.auth-content { margin: auto 0; }.auth-content h1 { margin: 20px 0 10px; }.auth-content > p { color: var(--muted); font-size: 14px; line-height: 1.5; }.auth-actions { display: grid; gap: 10px; margin-top: 28px; }.auth-footer { text-align:center; color:var(--muted); font-size:13px; margin-top: 20px; }.auth-footer button { color:var(--purple-2); font-weight:700; background:transparent; }
+.splash { min-height: 100vh; background: linear-gradient(rgba(48,36,93,.9),rgba(48,36,93,.86)), url('https://ui.edu.ng/sites/default/files/media/2023-04/university-of-ibadan-entrance.jpg') center / cover; color: white; display: grid; place-items: center; text-align: center; padding: 30px; position: relative; overflow:hidden; }.splash:before, .splash:after { content:''; position:absolute; border:1px solid rgba(255,255,255,.12); border-radius:50%; }.splash:before { width: 420px; height:420px; top:-170px; right:-180px; }.splash:after { width: 300px; height:300px; bottom:-150px; left:-120px; }.splash-inner { position:relative; z-index:1; display:grid; gap:16px; place-items:center; }.splash h1 { font-size:38px; }.splash p { color:#d4cfee; font-size:14px; }.logo-large { width:72px; height:72px; border-radius:23px 23px 23px 6px; background: white url('https://ui.edu.ng/sites/default/files/WhatsApp%20Image%202023-08-11%20at%201.55.09%20PM.jpeg') center / 115% auto no-repeat; color:transparent; font-size:0; font-weight:800; box-shadow:0 12px 30px rgba(0,0,0,.18); }.loader { margin-top:28px; width:34px; height:4px; border-radius:4px; background:var(--gold); animation: pulse 1.3s ease-in-out infinite; }@keyframes pulse {50%{opacity:.35;width:18px}}
+.onboard-art { min-height: 270px; margin: 22px 0 30px; border-radius: 24px 24px 8px 24px; background: linear-gradient(rgba(48,36,93,.2),rgba(48,36,93,.2)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85') center / cover; display:grid; place-items:center; position:relative; overflow:hidden; }.onboard-art:after { content:'FIRST & BEST'; position:absolute; right:14px; bottom:12px; color:rgba(255,255,255,.82); font-size:9px; font-weight:800; letter-spacing:.16em; transform:rotate(-90deg) translateX(100%); transform-origin:right bottom; }.art-panel { width: 230px; background:rgba(255,255,255,.96); border:1px solid var(--line); border-radius:15px; padding:16px; box-shadow:var(--shadow); transform:rotate(-3deg); }.art-panel .mini-line { height:8px; background:var(--lilac); border-radius:4px; margin:9px 0; }.art-panel .mini-line.gold { width:55%; background:#f4dfaf; }.onboard-copy { display:grid; gap:10px; }.onboard-copy p { color:var(--muted); line-height:1.55; font-size:14px; }.onboard-actions { display:flex; align-items:center; gap:12px; margin-top:auto; }.onboard-actions .btn { flex:1; }.skip { background:transparent; color:var(--muted); font-weight:700; }.dots { display:flex; gap:6px; margin-bottom:20px; }.dots i { width:6px; height:6px; background:#d7d0e7; border-radius:50%; }.dots i.active { width:20px; border-radius:5px; background:var(--gold); }
+.detail-back { background:transparent; color:var(--purple-2); font-size:13px; font-weight:700; margin-bottom:24px; padding:0; }.detail-hero { display:flex; gap:14px; align-items:center; margin-bottom:22px; }.course-emblem { width:55px; height:55px; border-radius:16px; background:var(--purple); display:grid; place-items:center; color:var(--gold); font-family:'Plus Jakarta Sans'; font-size:12px; font-weight:800; }.info-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }.info-grid div { padding:12px; background:var(--lilac); border-radius:11px; }.info-grid span { display:block; color:var(--muted); font-size:10px; margin-bottom:4px; }.info-grid strong { font-size:13px; }.list-icon { width:34px; height:34px; border-radius:10px; background:var(--lilac); display:grid; place-items:center; color:var(--purple-2); font-weight:700; }
+@media (min-width: 800px) { .sidebar { display:flex; width:240px; flex-direction:column; padding:30px 20px; border-right:1px solid var(--line); background:white; }.sidebar .brand { margin:0 12px 42px; }.side-nav { display:grid; gap:6px; }.side-nav button { display:flex; gap:12px; align-items:center; text-align:left; padding:13px 14px; border-radius:11px; background:transparent; color:var(--muted); font-weight:600; }.side-nav button.active, .side-nav button:hover { background:var(--lilac); color:var(--purple); }.sidebar-note { margin-top:auto; background:var(--purple); color:white; padding:16px; border-radius:14px; font-size:12px; line-height:1.5; }.bottom-nav { display:none; } main { padding:36px 48px 60px; } .stats-grid { grid-template-columns:repeat(4,1fr); }.dashboard-columns { display:grid; grid-template-columns:1.15fr .85fr; gap:20px; align-items:start; }.auth-shell, .onboard-shell { max-width:520px; } }

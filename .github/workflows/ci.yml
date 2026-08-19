@@ -1,0 +1,23 @@
+name: UniTrack checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run check
+      - name: Start server
+        run: SESSION_SECRET=ci-secret-that-is-long-enough-for-tests-123456 node server.js > server.log 2>&1 &
+      - run: npx wait-on http://127.0.0.1:3000/healthz
+      - run: npm run test:smoke
+      - run: npm run test:a11y
