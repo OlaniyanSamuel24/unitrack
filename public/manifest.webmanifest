@@ -1,0 +1,17 @@
+{
+  "name": "UniTrack",
+  "short_name": "UniTrack",
+  "description": "Academic command centre for University of Ibadan students.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e8",
+  "theme_color": "#1b1533",
+  "icons": [
+    {
+      "src": "/ui-logo.gif",
+      "sizes": "128x128",
+      "type": "image/gif",
+      "purpose": "any"
+    }
+  ]
+}

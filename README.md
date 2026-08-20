@@ -43,7 +43,7 @@ Before production, add:
 
 ## PostgreSQL cutover
 
-`db/migrations/001_initial.sql`, `scripts/migrate.mjs`, `scripts/import-sqlite.mjs`, `scripts/backup.ps1`, and `docker-compose.yml` define the PostgreSQL migration path. Docker is required to run the local Postgres service. The current local API process still uses SQLite for backward-compatible development; the final production cutover must switch the API repository layer to the PostgreSQL pool, run the migration/import, verify backups, and only then deploy the Postgres compose/app stack. Do not point a production `DATABASE_URL` at this build and assume the API has switched databases.
+Set `DATABASE_URL` and the API uses PostgreSQL automatically (local Docker, Neon, Supabase, or Vercel Postgres). On first connection UniTrack applies `db/migrations/001_initial.sql`. SQLite remains the default when `DATABASE_URL` is unset. Import an existing SQLite file with `node scripts/import-sqlite.mjs` after the Postgres schema exists.
 
 ## Production activation checklist
 

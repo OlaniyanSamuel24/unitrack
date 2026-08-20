@@ -34,7 +34,7 @@ Obtain a written data-sharing/API agreement from the University of Ibadan data o
 
 ## 5. PostgreSQL
 
-Provision a managed PostgreSQL 16+ instance with TLS, automated backups, point-in-time recovery, restricted network access, and a separate production role. Set `DATABASE_URL`, run `npm run db:migrate`, import the existing SQLite data with `node scripts/import-sqlite.mjs`, compare row counts and sample profiles, and rehearse rollback. The current local server remains SQLite until its repository layer is cut over to the PostgreSQL pool; do not treat the migration files alone as a completed runtime migration.
+Provision a managed PostgreSQL 16+ instance with TLS, automated backups, point-in-time recovery, restricted network access, and a separate production role. Set `DATABASE_URL`. UniTrack applies the initial schema on first connection. Import existing SQLite data with `node scripts/import-sqlite.mjs` if needed, compare row counts and sample profiles, and rehearse rollback.
 
 ## 6. Secrets and HTTPS
 

@@ -2,14 +2,8 @@
   "version": 2,
   "functions": {
     "api/index.js": {
-      "includeFiles": [
-        "index.html",
-        "styles.css",
-        "app.js",
-        "client-integration.js",
-        "privacy.html",
-        "public/icons/*.svg"
-      ],
+      "runtime": "nodejs20.x",
+      "includeFiles": "{index.html,styles.css,app.js,client-integration.js,privacy.html,lib/**,db/migrations/**,public/**}",
       "maxDuration": 30
     }
   },

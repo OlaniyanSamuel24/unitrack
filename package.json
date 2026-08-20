@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "check": "node --check server.js && node --check app.js",
+    "check": "node --check server.js && node --check lib/db.js && node --check app.js",
     "test:smoke": "node smoke-test.mjs",
     "test:a11y": "playwright test tests/a11y.spec.mjs",
     "db:migrate": "node scripts/migrate.mjs",

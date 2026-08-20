@@ -2,7 +2,7 @@
 
 ## Important database warning
 
-Vercel functions are ephemeral. UniTrack's current local SQLite adapter is only suitable for a demo deployment because `/tmp` storage can be cleared and is not shared reliably between function instances. For real student accounts, connect the PostgreSQL repository/runtime before launch.
+Vercel functions are ephemeral. For a real launch set `DATABASE_URL` to a managed PostgreSQL instance (Neon, Supabase, or Vercel Postgres). UniTrack now uses that connection automatically. SQLite is only for local development.
 
 ## Vercel setup
 
@@ -14,7 +14,7 @@ Vercel functions are ephemeral. UniTrack's current local SQLite adapter is only 
    - `NODE_ENV=production`
    - `APP_ORIGIN=https://YOUR_PROJECT.vercel.app` or your custom domain
    - `SESSION_SECRET` with at least 32 random characters
-   - `DATABASE_URL` for the managed PostgreSQL instance after the runtime cutover
+   - `DATABASE_URL` for managed PostgreSQL (required on Vercel)
    - Google, Apple, Resend, and UI data-provider variables from [PRODUCTION_SETUP.md](PRODUCTION_SETUP.md)
 
 5. Deploy the project.
